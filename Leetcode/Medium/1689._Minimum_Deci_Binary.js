@@ -3,11 +3,9 @@
  * @return {number}
  */
 var minPartitions = function (n) {
-	let max = 0;
-	for (let i = 0; i < n.length; i++) {
-		if (parseInt(n.charAt(i)) > max) {
-			max = parseInt(n.charAt(i));
-		}
+	let number = n.charAt(0);
+	for (let i = 1; i < n.length; i++) {
+		number = Math.max(number, n.charAt(i));
 	}
-	return max;
+	return number;
 };
