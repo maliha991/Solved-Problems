@@ -11,7 +11,7 @@
  * @return {number}
  */
 NumArray.prototype.sumRange = function(left, right) {
-    return this.nums.slice(left, right+1).reduce((a, b) => a+b);
+    return this.nums.slice(left, right+1).reduce((sum, value) => sum+value);
 };
 
 /** 
