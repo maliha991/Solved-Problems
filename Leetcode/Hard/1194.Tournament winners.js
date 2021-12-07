@@ -1,15 +1,18 @@
 const winner = (competitions, results) => {
-	results.map((result, index) => {
-		results[index] = result ? competitions[index][0] : competitions[index][1];
+	newResults = [...results];
+	newResults.forEach((result, index) => {
+		newResults[index] = result
+			? competitions[index][0]
+			: competitions[index][1];
 	});
 
-	const totalWin = results.reduce((totalWin, team) => {
+	const totalWin = newResults.reduce((totalWin, team) => {
 		totalWin[team] = (totalWin[team] || 0) + 1;
 		return totalWin;
 	}, {});
 
-	return Object.keys(totalWin).reduce((prev, next) =>
-		totalWin[prev] > totalWin[next] ? prev : next
+	return Object.keys(totalWin).reduce((result, item) =>
+		totalWin[result] > totalWin[item] ? result : item
 	);
 };
 
