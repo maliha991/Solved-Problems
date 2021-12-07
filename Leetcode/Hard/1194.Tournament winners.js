@@ -1,6 +1,6 @@
 const winner = (competitions, results) => {
-	newResults = [...results];
-	newResults.forEach((result, index) => {
+	let newResults = new Array(results.length).fill(0);
+	results.forEach((result, index) => {
 		newResults[index] = result
 			? competitions[index][0]
 			: competitions[index][1];
